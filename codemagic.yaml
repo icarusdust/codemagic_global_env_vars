@@ -3,12 +3,8 @@ workflows:
     name: Android Workflow
     max_build_duration: 120
     environment:
-      vars:
-        FCI_KEYSTORE_PATH: /tmp/keystore.keystore
-        FCI_KEYSTORE: Encrypted(...) # <-- Put your encrypted keystore here
-        FCI_KEYSTORE_PASSWORD: Encrypted(...) # <-- Put your encrypted keystore password here
-        FCI_KEY_PASSWORD: Encrypted(...) # <-- Put your encrypted key alias password here
-        FCI_KEY_ALIAS: Encrypted(...) # <-- Put your encrypted key alias here
+      groups:
+        - demo_project
       flutter: stable
       xcode: latest
       cocoapods: default
