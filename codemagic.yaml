@@ -4,11 +4,14 @@ workflows:
     max_build_duration: 120
     environment:
       vars:
+        GCLOUD_SERVICE_ACCOUNT_CREDENTIALS: Encrypted(...) # <-- Put your encrypted Google Play service account credentials here.
         FCI_KEYSTORE_PATH: /tmp/keystore.keystore
         FCI_KEYSTORE: Encrypted(...) # <-- Put your encrypted keystore here
         FCI_KEYSTORE_PASSWORD: Encrypted(...) # <-- Put your encrypted keystore password here
         FCI_KEY_PASSWORD: Encrypted(...) # <-- Put your encrypted key alias password here
         FCI_KEY_ALIAS: Encrypted(...) # <-- Put your encrypted key alias here
+        PACKAGE_NAME: "io.codemagic.flutteryaml" # <-- Put your package name here
+        GOOGLE_PLAY_TRACK: "alpha" # <-- This must be "alpha" or above.  
       flutter: stable
       xcode: latest
       cocoapods: default
