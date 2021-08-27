@@ -3,8 +3,12 @@ workflows:
     name: Android Workflow
     max_build_duration: 120
     environment:
-      groups:
-        - demo_project
+      vars:
+        FCI_KEYSTORE_PATH: /tmp/keystore.keystore
+        FCI_KEYSTORE: Encrypted(...) # <-- Put your encrypted keystore here
+        FCI_KEYSTORE_PASSWORD: Encrypted(...) # <-- Put your encrypted keystore password here
+        FCI_KEY_PASSWORD: Encrypted(...) # <-- Put your encrypted key alias password here
+        FCI_KEY_ALIAS: Encrypted(...) # <-- Put your encrypted key alias here
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -58,6 +62,7 @@ workflows:
         notify:
           success: true               # To not receive a notification when a build succeeds
           failure: false              # To not receive a notification when a build fails
+
   ios-workflow:
     name: iOS Workflow
     # instance_type: mac_mini
