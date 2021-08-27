@@ -8,7 +8,7 @@ workflows:
         FCI_KEYSTORE: Encrypted(...) # <-- Put your encrypted keystore here
         FCI_KEYSTORE_PASSWORD: Encrypted(...) # <-- Put your encrypted keystore password here
         FCI_KEY_PASSWORD: Encrypted(...) # <-- Put your encrypted key alias password here
-        FCI_KEY_ALIAS: Encrypted(...) # <-- Put your encrypted key alias here hello
+        FCI_KEY_ALIAS: Encrypted(...) # <-- Put your encrypted key alias here 
       flutter: stable
       xcode: latest
       cocoapods: default
