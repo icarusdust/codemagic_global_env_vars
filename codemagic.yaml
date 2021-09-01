@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 120
     environment:
       groups:
-        - demo_android
+        - demo_androidf
       flutter: stable
       xcode: latest
       cocoapods: default
