@@ -44,9 +44,6 @@ workflows:
       - flutter_drive.log
     publishing:
       # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
-      google_play:
-        credentials: Encrypted("")
-        track: internal
       email:
         recipients:
           - user_1@example.com
@@ -67,16 +64,8 @@ workflows:
     # instance_type: mac_mini
     max_build_duration: 120
     environment:
-      vars:
-        XCODE_WORKSPACE: "Runner.xcworkspace"
-        XCODE_SCHEME: "Runner"                
-        # https://docs.codemagic.io/code-signing-yaml/signing-ios/
-        APP_STORE_CONNECT_ISSUER_ID: Encrypted(...) # <-- Put your encrypted App Store Connect Issuer Id here 
-        APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted(...) # <-- Put your encrypted App Store Connect Key Identifier here 
-        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted App Store Connect Private Key here 
-        CERTIFICATE_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted Certificate Private Key here 
-        BUNDLE_ID: "io.codemagic.flutteryaml" # <-- Put your bundle id here
-        APP_STORE_ID: 1111111111 # <-- Use the TestFlight Apple id number (An automatically generated ID assigned to your app) found under General > App Information > Apple ID. 
+      groups:
+         - ios_credentials
       flutter: stable
       xcode: latest
       cocoapods: default
