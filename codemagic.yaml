@@ -45,8 +45,7 @@ workflows:
     publishing:
       # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
       google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: $GOOGLE_PLAY_TRACK
+        credentials: Encrypted("")
       email:
         recipients:
           - user_1@example.com
