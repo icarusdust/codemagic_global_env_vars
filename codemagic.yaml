@@ -46,6 +46,7 @@ workflows:
       # See the following link for details about email publishing - https://docs.codemagic.io/publishing-yaml/distribution/#email
       google_play:
         credentials: Encrypted("")
+        track: internal
       email:
         recipients:
           - user_1@example.com
